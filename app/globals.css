@@ -1,0 +1,103 @@
+:root {
+  color-scheme: light dark;
+  --bg: #08111f;
+  --bg-card: rgba(15, 24, 39, 0.85);
+  --bg-card-light: #f8fbff;
+  --accent: #7c5bff;
+  --accent-soft: rgba(124, 91, 255, 0.12);
+  --text: #f5f7fb;
+  --text-muted: rgba(245, 247, 251, 0.75);
+  --border: rgba(124, 91, 255, 0.18);
+  --shadow: 0 24px 70px rgba(8, 17, 31, 0.35);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(circle at top left, rgba(124, 91, 255, 0.2), transparent 55%),
+    radial-gradient(circle at top right, rgba(64, 224, 208, 0.15), transparent 45%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 2vw + 1rem, 4rem);
+}
+
+main {
+  width: min(1100px, 100%);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+textarea,
+input,
+select {
+  font: inherit;
+  background: rgba(8, 17, 31, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(124, 91, 255, 0.75);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #eef3ff;
+    --bg-card: #ffffff;
+    --bg-card-light: #ffffff;
+    --text: #101b34;
+    --text-muted: rgba(16, 27, 52, 0.65);
+    --border: rgba(124, 91, 255, 0.28);
+    --shadow: 0 24px 70px rgba(15, 35, 95, 0.14);
+  }
+
+  body {
+    background: linear-gradient(180deg, #eef3ff 0%, #f7f9ff 100%);
+  }
+
+  textarea,
+  input,
+  select {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(16, 27, 52, 0.08);
+    color: var(--text);
+  }
+}
